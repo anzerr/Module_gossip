@@ -124,6 +124,6 @@ module.exports = function ($) {
             }
         });
 
-        return ({'private': obj});
+        return ({'public': obj});
     });
 };
