@@ -5,7 +5,7 @@ module.exports = function ($) {
         'module!entity/gossip/util/base.js',
         'module!entity/gossip/util/util.js',
         'module!entity/gossip/util/message.js',
-        'module!entity/gossip/util/socket.js',
+        'module!entity/gossip/socket.js',
         'module!entity/gossip/server.js',
         'module!entity/gossip/peer.js'
     ], function (
@@ -113,7 +113,7 @@ module.exports = function ($) {
             });
         };
         obj.prototype = $.extends(base, {
-            sockets: function() {
+            socket: function() {
                 return this.peer.get();
             },
 
