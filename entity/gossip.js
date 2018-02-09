@@ -113,8 +113,19 @@ module.exports = function ($) {
             });
         };
         obj.prototype = $.extends(base, {
-            get: function() {
+            sockets: function() {
                 return this.peer.get();
+            },
+
+            address: function() {
+                const o = [], map = {};
+                for (let i in this.peer.address) {
+                    if (!map[i]) {
+                        o.push(i);
+                        map[i] = true;
+                    }
+                }
+                return (o);
             },
 
             who: function() {
