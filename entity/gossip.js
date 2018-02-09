@@ -5,12 +5,14 @@ module.exports = function ($) {
         'module!entity/gossip/util/base.js',
         'module!entity/gossip/util/util.js',
         'module!entity/gossip/util/message.js',
+        'module!entity/gossip/util/socket.js',
         'module!entity/gossip/server.js',
         'module!entity/gossip/peer.js'
     ], function (
         base,
         util,
         message,
+        socket,
         server,
         peer
     ) {
@@ -120,7 +122,7 @@ module.exports = function ($) {
             },
 
             send: function(data) {
-                return this.peer.sendAll(this.protocol().create('message', data));
+                return new socket(this.peer, this.protocol().create('message', data));
             }
         });
 

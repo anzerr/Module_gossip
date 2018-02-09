@@ -17,6 +17,10 @@ module.exports = function ($) {
                 return (this);
             },
 
+            socket: function() {
+                return (this._packet.socket);
+            },
+
             packet: function() {
                 return (this._packet.packet);
             },
